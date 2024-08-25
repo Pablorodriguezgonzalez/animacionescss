@@ -13,6 +13,10 @@
   background-position: center;
   position: relative;
   background-color: #565985;
+
+  .titulo-banner {
+    padding-left: 3%;
+  }
 }
 
 ul {
@@ -100,66 +104,6 @@ ul li a {
   color: black;
 }
 
-/* MOBILE */
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-areas:
-    "sidebar sidebar"
-    "header header"
-    "marcas marcas"
-    "main main"
-    "contact contact"
-    "footer footer";
-}
-@media (max-width: 576px) {
-  .menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    li {
-      display: inline;
-    }
-  }
-}
-
-/* DESKTOP */
-@media (min-width: 576px) {
-  .grid {
-    grid-template-areas:
-      "sidebar header"
-      "sidebar marcas"
-      "sidebar main"
-      "sidebar contact"
-      "footer footer";
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gallery {
-    background-color: #d8d9ed;
-    grid-area: gallery;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    overflow: auto;
-    padding: 20px;
-  }
-
-  .header {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
 header {
   grid-area: header;
 }
@@ -180,6 +124,82 @@ footer {
   background-color: #120907;
   color: white;
   text-align: center;
+  padding-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas:
+    "sidebar sidebar"
+    "header header"
+    "marcas marcas"
+    "main main"
+    "contact contact"
+    "footer footer";
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    li {
+      display: inline;
+    }
+  }
+}
+
+/* TABLET */
+@media (min-width: 576px) {
+  .grid {
+    grid-template-areas:
+      "sidebar header"
+      "sidebar marcas"
+      "sidebar main"
+      "sidebar contact"
+      "footer footer";
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10%;
+  }
+
+  .gallery {
+    background-color: #d8d9ed;
+    grid-area: gallery;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow: auto;
+    padding: 20px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+  .gallery {
+    background-color: #d8d9ed;
+    grid-area: gallery;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    overflow: auto;
+    padding: 20px;
+  }
 }
 
 /*TRANSICIONES*/
